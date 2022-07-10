@@ -1,0 +1,14 @@
+.footer {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    > p {
+        color: var(--secondary-text-color);
+        font-size: 12px;
+        font-weight: 400;
+        text-transform: uppercase;
+        >span {
+            color: var(--primary-text-color);
+            font-weight: 700;
+        }
+    }
+}

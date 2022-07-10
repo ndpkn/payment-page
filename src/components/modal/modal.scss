@@ -1,0 +1,106 @@
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.25);
+    animation-name: appear;
+    animation-duration: 300ms;
+    font-family: 'Roboto', sans-serif;
+    &-dialog {
+        width: 100%;
+        max-width: 550px;
+        background: var(--background-color);
+        position: relative;
+        margin: 0 20px;
+        max-height: calc(100vh - 40px);
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: slide-in;
+        animation-duration: 0.5s;
+        border-radius: 10px;
+    }
+    &-header, &-footer {
+        color: var( --primary-text-color);
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+    }
+    &-header {
+        border-bottom: 1px solid #dbdbdb;
+        justify-content: space-between;
+        text-transform: uppercase;
+    }
+    &-footer {
+        border-top: 1px solid #dbdbdb;
+        justify-content: flex-end;
+        >button {
+            background: linear-gradient(360deg, #67C870 0%, #81E79B 99.99%, rgba(103, 200, 112, 0) 100%);
+            border-radius: 10px;
+            color: var(--background-color);
+            padding: 10px 25px;
+            width: 120px;
+            text-transform: uppercase;
+        }
+    }
+    &-close {
+        cursor: pointer;
+        padding: 1rem;
+        margin: -1rem -1rem -1rem auto;
+    }
+    &-body {
+        color: var( --primary-text-color);
+        overflow: auto;
+    }
+    
+    &-content {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        >input {
+            margin-bottom: 15px;
+            font-size: 22px;
+            color: var(--primary-text-color);
+            background-color: var(--background-color);
+            outline: none;
+            border: none;
+            word-spacing: 10px;
+            letter-spacing: 10px;
+        }
+        >label {
+            color: var(--secondary-text-color);
+            margin-bottom: 5px;
+        }
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateY(-150px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,37 @@
+.subheader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 450px) {
+        flex-direction: column;
+
+        }
+    &__balance {
+        margin-right: 70px;
+        >p {
+            font-weight: 700;
+            color: var(--primary-text-color);
+            >span {
+                color: var(--secondary-text-color);
+                font-weight: 400;
+                margin-right: 15px;
+            }
+        }
+        
+    }
+    &__buttons {
+        >button{
+            margin-right: 15px;
+            background-color: transparent;
+            color: var(--primary-text-color);
+            padding: 10px 20px;
+            border-radius: 10px;
+            &:hover {
+                background-color: var(--secondary-text-color);
+            }
+            &.active {
+                background-color: var(--secondary-text-color);
+            }
+        }
+    }
+}

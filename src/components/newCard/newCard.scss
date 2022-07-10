@@ -1,0 +1,124 @@
+.newCard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50%;
+    @media screen and (max-width: 450px) {
+        width: 100%;
+        align-items: center;
+
+        }
+    &__items{
+        position: relative;
+        &-item {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 300px;
+            border-radius: 10px;
+            padding: 17px 12px;
+            margin-bottom: 15px;
+            background-color: var(--input-card-background);
+            border: 1px solid transparent;
+            &:hover {
+                border: 1px solid var(--input-card-border);
+            }
+        }
+        &-logo {
+            margin-right: 35px;
+        }
+        &-number {
+            >p {
+                word-spacing: 20px;
+                font-size: 12px;
+                color: var(--primary-text-color);
+            }
+        }
+        &-button {
+            >button {
+                background-color: transparent;
+                color: var(--primary-text-color);
+                @media screen and (max-width: 450px) {
+                    font-size: 25px;
+                    padding: 0 10px;
+                }
+            }
+            
+        }
+    }
+    &__button {
+        margin-top: 15px;
+        >button {
+            background-color: transparent;
+            color: var(--secondary-text-color);
+            border: 1px solid var(--secondary-text-color);
+            text-transform: uppercase;
+            width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            
+        }
+    }
+}
+.edit {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 4px;
+    color: black;
+    left: 310px;
+    padding: 15px;
+    font-size: 12px;
+    box-shadow: 0px 9px 12px rgba(0, 0, 0, 0.14), 0px 3px 16px rgba(0, 0, 0, 0.12), 0px 5px 6px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    opacity: 0;
+    @media screen and (max-width: 450px) {
+        left: 53%;
+        padding: 5px 10px;
+        width: 90px;
+        height: 90px;
+    }
+
+    &::before {
+        content: '';
+        height: 30px;
+        width: 30px;
+        background-color: #fff;
+        position: absolute;
+        left: -5px;
+        border-radius: 7px;
+        z-index: -1;
+        @media screen and (max-width: 450px) {
+            left: auto;
+            right: -5px;
+            top: 35%;
+        }
+    }
+    &__edit {
+        display: flex;
+        cursor: pointer;
+        >img {
+            object-fit: contain;
+            margin-right: 10px;
+        }
+    }
+    &__delete {
+        display: flex;
+        cursor: pointer;
+        >img {
+            object-fit: contain;
+            margin-right: 10px;
+
+        }
+    }
+}
+.visible {
+    opacity: 1;
+    z-index: 2;
+    transition: 0.3s linear;
+}
